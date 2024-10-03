@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import FavoriteColor from './tuto/Form';
+// import Counter from './tuto/Form';
+// import Fruit from './Fruit/fruit';
+// import MasterState from './Formulaire/formulaire';
+import StoreListe from './practice/store/StoreList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <App />
+    <StoreListe/>
+    {/* <MasterState/> */}
+    {/* <Fruit /> */}
+    {/* <Counter /> */}
+    {/* <App /> */}
+    {/* <First FirstName="ZAKARIA" Lastname="BEN JEDDI" /> */}
+    {/* <Form  plc="name required" nameinput="test">Enter Your First Name  </Form> */}
+    {/* <Player players = {players} /> */}
   </React.StrictMode>
 );
 
