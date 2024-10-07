@@ -6,14 +6,19 @@ import reportWebVitals from './reportWebVitals';
 // import FavoriteColor from './tuto/Form';
 // import Counter from './tuto/Form';
 // import Fruit from './Fruit/fruit';
-// import MasterState from './Formulaire/formulaire';
+import Formulaire from './Formulaire/formulaire';
 import StoreListe from './practice/store/StoreList';
+import LanguageSwitcherParent from './LanguageSwitcher/LanguageSwitherParent';
+import MasterForm from './Formulaire/MasterFormulaire';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <StoreListe/>
+    <MasterForm/>
+    {/* <LanguageSwitcherParent/> */}
+    {/* <Formulaire /> */}
+    {/* <StoreListe/> */}
     {/* <MasterState/> */}
     {/* <Fruit /> */}
     {/* <Counter /> */}

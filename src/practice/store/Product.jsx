@@ -8,7 +8,7 @@ export default function Product({ prd }) {
                 <td>{prd.id}</td>
                 <td>{prd.title}</td>
                 <td>{prd.price}</td>
-                <td>{prd.description}</td>
+                <td>{prd.description.slice(0,100)}</td>
                 <td>{prd.category}</td>
                 <td><img src={prd.image} height={250} width={300} /></td>
                 <td>{prd.rating.rate} / 5</td>

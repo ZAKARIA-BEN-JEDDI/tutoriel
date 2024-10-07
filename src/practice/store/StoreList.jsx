@@ -6,31 +6,40 @@ export default function StoreListe() {
     const [productList , setproductList] = useState([])
     const [categorieList , setcategorieList] = useState([])
     const [serchInput , SetsearchInput] = useState('')
+    const [serchCategorie , SetserchCategorie] = useState('')
 
     const getProduct = () =>{
-        const products = fetch('https://fakestoreapi.com/products')
+        fetch('https://fakestoreapi.com/products')
         .then(res=>res.json())
         .then(json=> setproductList(json))
     }
 
     const getCategories = () =>{
-        const categorie = fetch('https://fakestoreapi.com/products/categories')
+        fetch('https://fakestoreapi.com/products/categories')
             .then(res=>res.json())
             .then(json=>setcategorieList(json))
     }
 
     const listProduct = () =>{
-        const productListTemp = productList.filter(product => {
-            return product.title.toLowerCase().includes(serchInput.toLowerCase()) 
-            || product.id.toString().toLowerCase().includes(serchInput.toLowerCase())  
-            || product.price.toString().toLowerCase().includes(serchInput.toLowerCase())  
-            || product.description.toString().toLowerCase().includes(serchInput.toLowerCase())  
-            || product.rating.rate.toString().toLowerCase().includes(serchInput.toLowerCase())  
-        });
+        var productListTemp = productList
+        if (serchInput) {
+            productListTemp = productListTemp.filter(product => {
+                return product.title.toLowerCase().includes(serchInput.toLowerCase()) 
+                || product.id.toString().toLowerCase().includes(serchInput.toLowerCase())  
+                || product.price.toString().toLowerCase().includes(serchInput.toLowerCase())  
+                || product.description.toString().toLowerCase().includes(serchInput.toLowerCase())  
+                || product.category.toString().toLowerCase().includes(serchInput.toLowerCase())  
+            });
+        }
+        if (serchCategorie) {
+            productListTemp = productListTemp.filter(product => {
+                return product.category === serchCategorie
+            })
+        }
         if (productListTemp.length > 0) {
             return productListTemp.map((item , key) => {
-                return <Product key={key} prd={item}/>
-            }) 
+                return <Product key={key} prd={item} />
+            })
         }else{
             return (
                 <tr>
@@ -43,15 +52,25 @@ export default function StoreListe() {
     const listCategorie = () =>{
         if (categorieList.length) {
             return categorieList.map((categorie,key) =>{
-                return <button className="col btn btn-warning mx-4" key={key}>{categorie}</button>
+                return <button className="col btn btn-warning mx-4" key={key} value={categorie} onClick={searchByCategorie}>{categorie}</button>
             })
         }
-        
+    }
+    const searchByCategorie = (e) =>{
+        const searchCategorieValue = e.target.value
+        SetserchCategorie(searchCategorieValue);
     }
 
     const handSearch = (e) =>{
         let txt = document.querySelector('#txt').value
         SetsearchInput(txt)
+        console.log(serchInput);
+        
+    }
+
+    const ResetButton = () =>{
+        SetsearchInput('')
+        SetserchCategorie('')
     }
 
     useEffect( () =>{
@@ -64,7 +83,8 @@ export default function StoreListe() {
         <div class="input-group mb-4">
             <span className="input-group-text">Search</span>
             <input type="text" id="txt" placeholder="Search product" className="form-control" onChange={handSearch}/>
-            <input type="submit" value="Search" className="input-group-text btn btn-primary" onClick={handSearch} />
+            <input type="submit" value="Search" className="input-group-text btn btn-primary mx-1" onClick={handSearch} />
+            <input type="submit" value="Reset" className="input-group-text btn btn-danger mx-1" onClick={ResetButton} />
         </div>
         <hr />
         <h4 className="text-center my-3">Catergories</h4>
