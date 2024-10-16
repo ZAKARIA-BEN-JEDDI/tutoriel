@@ -10,12 +10,16 @@ import Formulaire from './Formulaire/formulaire';
 import StoreListe from './practice/store/StoreList';
 import LanguageSwitcherParent from './LanguageSwitcher/LanguageSwitherParent';
 import MasterForm from './Formulaire/MasterFormulaire';
+import MyMasterFormulaire from './Formulaire/MyMasterFormulaire';
+import MonsterFormulaire from './Formulaire/MonsterFormulaire';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <MasterForm/>
+    <MonsterFormulaire/>
+    {/* <MyMasterFormulaire/> */}
+    {/* <MasterForm/> */}
     {/* <LanguageSwitcherParent/> */}
     {/* <Formulaire /> */}
     {/* <StoreListe/> */}
@@ -26,7 +30,6 @@ root.render(
     {/* <First FirstName="ZAKARIA" Lastname="BEN JEDDI" /> */}
     {/* <Form  plc="name required" nameinput="test">Enter Your First Name  </Form> */}
     {/* <Player players = {players} /> */}
-    {/* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */}
   </React.StrictMode>
 );
 
