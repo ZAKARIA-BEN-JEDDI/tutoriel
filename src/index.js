@@ -12,12 +12,18 @@ import LanguageSwitcherParent from './LanguageSwitcher/LanguageSwitherParent';
 import MasterForm from './Formulaire/MasterFormulaire';
 import MyMasterFormulaire from './Formulaire/MyMasterFormulaire';
 import MonsterFormulaire from './Formulaire/MonsterFormulaire';
+import App from './Router/App';
+import Calculator from './practice/calculator/Calculator';
+import Todolist from './practice/todolist/todolist';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <MonsterFormulaire/>
+    <Todolist/>
+    {/* <Calculator/> */}
+    {/* <App/> */}
+    {/* <MonsterFormulaire/> */}
     {/* <MyMasterFormulaire/> */}
     {/* <MasterForm/> */}
     {/* <LanguageSwitcherParent/> */}
