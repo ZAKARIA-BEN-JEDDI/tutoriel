@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 export default function Todolist() {
   const [tache, setTache] = useState(() => {
     const savedTasks = localStorage.getItem('tache');
-    return savedTasks ? JSON.parse(savedTasks) : [{ TacheName: "Tache 1", Tachestatus: 1 }];
+    return savedTasks ? JSON.parse(savedTasks) : [{id:0, TacheName: "Tache 1", Tachestatus: 1 }];
   });
+  const [ID , setid] = useState(0);
   const [tachestate , settachestate] = useState(0)
   const tachvalue = useRef('');
   const complete = useRef('');
@@ -23,11 +24,15 @@ export default function Todolist() {
       if (encours.current.checked) {
         settachestate(1)
       }
-      if (settachestate.length > 0) {
+      if (!complete.current.checked && !encours.current.checked) {
+        settachestate(0)
+      }
+      if (settachestate.length > 0 && settachestate.length > 0) {
+        setid(_=>_+1)
         setTache(prevState => {
           return [
             ...prevState,
-            { TacheName: tacheinputname, Tachestatus: tachestate }
+            {id:ID,TacheName: tacheinputname.toUpperCase(), Tachestatus: tachestate }
           ];
         });
       }
@@ -45,7 +50,6 @@ export default function Todolist() {
       return newTache;
     });
   };
-
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
@@ -69,7 +73,6 @@ export default function Todolist() {
                   </label>
                 </div>
               </div>
-
               <div className="col-2">
                 <button className='btn btn-success' onClick={AddTache}>Add</button>
               </div>
@@ -88,16 +91,19 @@ export default function Todolist() {
                 {
                   tache.map((item, key) => (
                     <tr
-                      key={key}
+                      key={item.id}
                       style={{
                         textDecoration: item.Tachestatus === 1 ? 'line-through' : 'none'
                       }}
                       >
-                      <td>{key+1}</td>
+                      <td>{item.id}</td>
                       <td>{item.TacheName}</td>
                       <td>{item.Tachestatus === 1 ? "Complétée" : "En cours"}</td>
-                      <td>
+                      <td key={key}>
                         <input value={key} class="form-check-input" type="checkbox" id="flexCheckDefault" onChange={(e) => handelChangeCheckbox(e,key)}/>
+                        <i key={item.id} class="fa-solid fa-delete-left ms-3 text-danger btn" onClick={()=>{
+                          setTache(prevstate => prevstate.filter(task => task.id !== item.id))
+                        }}></i>
                       </td>
                     </tr>
                   ))
