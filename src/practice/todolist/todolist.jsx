@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './Todolist.css';
 export default function Todolist() {
   const [tache, setTache] = useState(() => {
     const savedTasks = localStorage.getItem('tache');
