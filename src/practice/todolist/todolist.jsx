@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-
+import './Todolist.css';
 export default function Todolist() {
   const [tache, setTache] = useState(() => {
     const savedTasks = localStorage.getItem('tache');
     return savedTasks ? JSON.parse(savedTasks) : [{ TacheName: "Tache 1", Tachestatus: 1 }];
   });
-
+  const [tachestate , settachestate] = useState(0)
   const tachvalue = useRef('');
+  const complete = useRef('');
+  const encours = useRef('');
 
   useEffect(() => {
     localStorage.setItem('tache', JSON.stringify(tache));
@@ -16,14 +18,33 @@ export default function Todolist() {
     e.preventDefault();
     const tacheinputname = tachvalue.current.value;
     if (tacheinputname.trim()) {
-      setTache(prevState => {
-        return [
-          ...prevState,
-          { TacheName: tacheinputname, Tachestatus: 0 }
-        ];
-      });
+      if (complete.current.checked) {
+        settachestate(0)
+      }
+      if (encours.current.checked) {
+        settachestate(1)
+      }
+      if (settachestate.length > 0) {
+        setTache(prevState => {
+          return [
+            ...prevState,
+            { TacheName: tacheinputname, Tachestatus: tachestate }
+          ];
+        });
+      }
       tachvalue.current.value = '';
     }
+  };
+
+  const handelChangeCheckbox = (e, key) => {
+    setTache(prevTache => {
+      const newTache = [...prevTache];
+      newTache[key] = {
+        ...newTache[key],
+        Tachestatus: newTache[key].Tachestatus === 0 ? 1 : 0
+      };
+      return newTache;
+    });
   };
 
 
@@ -35,11 +56,21 @@ export default function Todolist() {
           <form action="">
             <div className="row text-center">
               <input type="text"  className='col-6' ref={tachvalue}/>
-              <select className='form-select col-4'>
-                <option selected value="">Select Etat</option> 
-                <option value="0">En Cours</option>
-                <option value="1">Complétée</option>
-              </select>
+              <div className="col-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="a" id="flexCheckDefault" ref={complete}/>
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Complete
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="a" id="flexCheckDefault" ref={encours}/>
+                  <label class="form-check-label" for="flexCheckDefault">
+                  En Cours
+                  </label>
+                </div>
+              </div>
+
               <div className="col-2">
                 <button className='btn btn-success' onClick={AddTache}>Add</button>
               </div>
@@ -57,13 +88,17 @@ export default function Todolist() {
             <tbody>
                 {
                   tache.map((item, key) => (
-                    <tr key={key}>
+                    <tr
+                      key={key}
+                      style={{
+                        textDecoration: item.Tachestatus === 1 ? 'line-through' : 'none'
+                      }}
+                      >
                       <td>{key+1}</td>
                       <td>{item.TacheName}</td>
                       <td>{item.Tachestatus === 1 ? "Complétée" : "En cours"}</td>
                       <td>
-                        <button className="btn rounded-pill btn-outline-warning me-2 btn-sm">Edit</button>
-                        <button className="btn rounded-pill btn-outline-danger ms-2 btn-sm">Delete</button>
+                        <input value={key} class="form-check-input" type="checkbox" id="flexCheckDefault" onChange={(e) => handelChangeCheckbox(e,key)}/>
                       </td>
                     </tr>
                   ))
