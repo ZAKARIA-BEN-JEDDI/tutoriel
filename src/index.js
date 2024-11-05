@@ -16,12 +16,16 @@ import App from './Router/App';
 import Calculator from './practice/calculator/Calculator';
 import Todolist from './practice/todolist/todolist';
 import Usecallback from './usecallbackhook/usecallback'
+import UseMemoEffect from './useMemo/useMemo'
+import Spli from './spline/spline'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <Usecallback/>
+    <Spli/>
+    {/* <UseMemoEffect/> */}
+    {/* <Usecallback/> */}
     {/* <Todolist/> */}
     {/* <Calculator/> */}
     {/* <App/> */}

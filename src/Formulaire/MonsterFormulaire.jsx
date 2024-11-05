@@ -51,7 +51,7 @@ export default function MonsterFormulaire(){
       </div>
       <div class="mb-3">
         <label for="" class="form-label">Email</label>
-        <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="abc@mail.com" ref={EmailValue} onChange={handelchange}/>
+        <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="abc@mail.com" ref={EmailValue}  onChange={handelchange}/>
         <small id="emailHelpId" class="form-text text-muted">Help text</small>
       </div>
       <div class="mb-3">
