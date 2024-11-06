@@ -6,24 +6,26 @@ import reportWebVitals from './reportWebVitals';
 // import FavoriteColor from './tuto/Form';
 // import Counter from './tuto/Form';
 // import Fruit from './Fruit/fruit';
-import Formulaire from './Formulaire/formulaire';
-import StoreListe from './practice/store/StoreList';
-import LanguageSwitcherParent from './LanguageSwitcher/LanguageSwitherParent';
-import MasterForm from './Formulaire/MasterFormulaire';
-import MyMasterFormulaire from './Formulaire/MyMasterFormulaire';
-import MonsterFormulaire from './Formulaire/MonsterFormulaire';
-import App from './Router/App';
-import Calculator from './practice/calculator/Calculator';
-import Todolist from './practice/todolist/todolist';
-import Usecallback from './usecallbackhook/usecallback'
-import UseMemoEffect from './useMemo/useMemo'
-import Spli from './spline/spline'
+// import Formulaire from './Formulaire/formulaire';
+// import StoreListe from './practice/store/StoreList';
+// import LanguageSwitcherParent from './LanguageSwitcher/LanguageSwitherParent';
+// import MasterForm from './Formulaire/MasterFormulaire';
+// import MyMasterFormulaire from './Formulaire/MyMasterFormulaire';
+// import MonsterFormulaire from './Formulaire/MonsterFormulaire';
+// import App from './Router/App';
+// import Calculator from './practice/calculator/Calculator';
+// import Todolist from './practice/todolist/todolist';
+// import Usecallback from './usecallbackhook/usecallback'
+// import UseMemoEffect from './useMemo/useMemo'
+// import Spli from './spline/spline'
+import useReducerHook from './useReducer/useReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <Spli/>
+    <useReducerHook/>
+    {/* <Spli/> */}
     {/* <UseMemoEffect/> */}
     {/* <Usecallback/> */}
     {/* <Todolist/> */}

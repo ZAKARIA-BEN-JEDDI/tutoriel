@@ -1,6 +1,6 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
-import './BackgroundScene.css';
+// import './BackgroundScene.css';
 
 export default function BackgroundScene() {
   return (

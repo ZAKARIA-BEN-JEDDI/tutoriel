@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function MonsterFormulaire(){
 
@@ -17,9 +17,6 @@ export default function MonsterFormulaire(){
 
   const handelchange = (event) => {
     event.preventDefault()
-    // console.log(NameValue.current.value);
-    // console.log(EmailValue.current.value);
-    // console.log(MessageValue.current.value);
     ValidInput()
   }
 
@@ -30,18 +27,40 @@ export default function MonsterFormulaire(){
         return [...preventvalue , "Le message doit porte plus de 10 caractere !"];
       })
     }
+    if (!NameValue.current.value.trim().match(/^[a-zA-Zàâäéèêëïîôöùûüç]+$/)) {
+      setErrors(preventvalue =>{
+        return [...preventvalue , "Saisir un nom valid "];
+      })
+    }
+    if (!EmailValue.current.value.trim().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+      setErrors(preventvalue =>{
+        return [...preventvalue , "Email Adress Form not valid "];
+      })
+    }
   }
+
+  useEffect(()=>{
+
+    }
+  ,[NameValue,EmailValue,MessageValue])
 
   return <>
     <div className="container mt-5">
       
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {Errors.length && (
+        {Errors.length > 0 && (
           Errors.map((item , key ) =>{
             return <li key={key}>{item}</li>
           })
         )
         }
+      </div>
+      <div className="alert alert-success">
+        <ul>
+          <li><strong>Name:</strong>  {NameValue.current.value}</li>
+          <li><strong>Email:</strong>  {EmailValue.current.value}</li>
+          <li><strong>Message:</strong>  {MessageValue.current.value}</li>
+        </ul>
       </div>
       
       <div class="mb-3">
