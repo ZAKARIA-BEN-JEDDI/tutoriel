@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import FavoriteColor from './tuto/Form';
 // import Counter from './tuto/Form';
@@ -18,13 +18,14 @@ import reportWebVitals from './reportWebVitals';
 // import Usecallback from './usecallbackhook/usecallback'
 // import UseMemoEffect from './useMemo/useMemo'
 // import Spli from './spline/spline'
-import useReducerHook from './useReducer/useReducer';
+// import useReducerHook from './useReducer/useReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <useReducerHook/>
+    <App/>
+    {/* <useReducerHook/> */}
     {/* <Spli/> */}
     {/* <UseMemoEffect/> */}
     {/* <Usecallback/> */}
