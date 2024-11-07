@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ContactUs from './Email/EmailJs';
 // import FavoriteColor from './tuto/Form';
 // import Counter from './tuto/Form';
 // import Fruit from './Fruit/fruit';
@@ -20,12 +19,16 @@ import ContactUs from './Email/EmailJs';
 // import UseMemoEffect from './useMemo/useMemo'
 // import Spli from './spline/spline'
 // import useReducerHook from './useReducer/useReducer';
+import ContactUs from './Email/EmailJs';
+import Email from './Email/Email';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <ContactUs/>
+    <Email/>
+    {/* <ContactUs/> */}
     {/* <App/> */}
     {/* <useReducerHook/> */}
     {/* <Spli/> */}
