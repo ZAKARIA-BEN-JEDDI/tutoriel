@@ -19,15 +19,17 @@ import reportWebVitals from './reportWebVitals';
 // import UseMemoEffect from './useMemo/useMemo'
 // import Spli from './spline/spline'
 // import useReducerHook from './useReducer/useReducer';
-import ContactUs from './Email/EmailJs';
+// import ContactUs from './Email/EmailJs';
 import Email from './Email/Email';
+import Sign from './SignIn/Sign';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <Email/>
+    <Sign/>
+    {/* <Email/> */}
     {/* <ContactUs/> */}
     {/* <App/> */}
     {/* <useReducerHook/> */}
