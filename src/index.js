@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ContactUs from './Email/EmailJs';
 // import FavoriteColor from './tuto/Form';
 // import Counter from './tuto/Form';
 // import Fruit from './Fruit/fruit';
@@ -24,7 +25,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <App/>
+    <ContactUs/>
+    {/* <App/> */}
     {/* <useReducerHook/> */}
     {/* <Spli/> */}
     {/* <UseMemoEffect/> */}
