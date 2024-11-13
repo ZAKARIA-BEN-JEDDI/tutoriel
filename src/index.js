@@ -17,18 +17,20 @@ import reportWebVitals from './reportWebVitals';
 // import Todolist from './practice/todolist/todolist';
 // import Usecallback from './usecallbackhook/usecallback'
 // import UseMemoEffect from './useMemo/useMemo'
-// import Spli from './spline/spline'
+import Spli from './spline/spline'
 // import useReducerHook from './useReducer/useReducer';
 // import ContactUs from './Email/EmailJs';
-import Email from './Email/Email';
-import Sign from './SignIn/Sign';
+// import Email from './Email/Email';
+// import Sign from './SignIn/Sign';
+import Timer from './timer/timer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <Sign/>
+    <Timer/>
+    {/* <Sign/> */}
     {/* <Email/> */}
     {/* <ContactUs/> */}
     {/* <App/> */}
