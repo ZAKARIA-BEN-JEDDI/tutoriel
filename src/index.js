@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NewForm from './useReducer/Form';
+// import TooltipNodeDemo from './Tooltipe/Tooltipe';
 // import FavoriteColor from './tuto/Form';
 // import Counter from './tuto/Form';
 // import Fruit from './Fruit/fruit';
@@ -17,19 +19,20 @@ import reportWebVitals from './reportWebVitals';
 // import Todolist from './practice/todolist/todolist';
 // import Usecallback from './usecallbackhook/usecallback'
 // import UseMemoEffect from './useMemo/useMemo'
-import Spli from './spline/spline'
+// import Spli from './spline/spline'
 // import useReducerHook from './useReducer/useReducer';
 // import ContactUs from './Email/EmailJs';
 // import Email from './Email/Email';
 // import Sign from './SignIn/Sign';
-import Timer from './timer/timer';
+// import Timer from './timer/timer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <Timer/>
+    <NewForm/>
+    {/* <Timer/> */}
     {/* <Sign/> */}
     {/* <Email/> */}
     {/* <ContactUs/> */}

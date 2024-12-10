@@ -7,7 +7,7 @@ export default function BackgroundScene() {
     <div className="background-container">
       <Spline scene="https://prod.spline.design/z7nGrd5ETdkxAwZ0/scene.splinecode" />
       <div className="overlay-text">
-        ZAKARIA BEN JEDDI
+        
       </div>
     </div>
   );
