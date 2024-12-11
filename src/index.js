@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import NewForm from './useReducer/Form';
+import FormReducer from './useReducer/FormReducer';
+// import NewForm from './useReducer/Form';
 // import TooltipNodeDemo from './Tooltipe/Tooltipe';
 // import FavoriteColor from './tuto/Form';
 // import Counter from './tuto/Form';
@@ -31,7 +32,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
   <React.StrictMode>
-    <NewForm/>
+    <FormReducer/>
+    {/* <NewForm/> */}
     {/* <Timer/> */}
     {/* <Sign/> */}
     {/* <Email/> */}
