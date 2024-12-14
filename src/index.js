@@ -35,6 +35,7 @@ import store from './redux/store';
 // import Timer from './timer/timer';
 import Layout from './Router/Pages2/Layout';
 import App2 from './Router/App2';
+import User from './API/User';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -68,7 +69,8 @@ root.render(
     {/* <MasterState/> */}
     {/* <Fruit /> */}
     {/* <Counter /> */}
-    <App2/>
+    <User />
+    {/* <App2/> */}
     {/* <App /> */}
     {/* <First FirstName="ZAKARIA" Lastname="BEN JEDDI" /> */}
     {/* <Form  plc="name required" nameinput="test">Enter Your First Name  </Form> */}
