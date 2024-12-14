@@ -19,4 +19,4 @@ export default function FromReducerFunction (state,action){
     default:
       return state;
   }
-} 
+}

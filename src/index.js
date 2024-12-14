@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import FormReducer from './useReducer/FormReducer';
+//! REDUX 
+// import App from './redux/App';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+// import ReduxForm from './redux/ReduxForm';
+
+//! 
+// import FormReducer from './useReducer/FormReducer';
 // import NewForm from './useReducer/Form';
 // import TooltipNodeDemo from './Tooltipe/Tooltipe';
 // import FavoriteColor from './tuto/Form';
@@ -15,7 +22,7 @@ import FormReducer from './useReducer/FormReducer';
 // import MasterForm from './Formulaire/MasterFormulaire';
 // import MyMasterFormulaire from './Formulaire/MyMasterFormulaire';
 // import MonsterFormulaire from './Formulaire/MonsterFormulaire';
-// import App from './Router/App';
+import App from './Router/App';
 // import Calculator from './practice/calculator/Calculator';
 // import Todolist from './practice/todolist/todolist';
 // import Usecallback from './usecallbackhook/usecallback'
@@ -31,8 +38,12 @@ import FormReducer from './useReducer/FormReducer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const players = ['Mbappe','Vini','Rodrygo','Diaz','Endrik'];
 root.render(
+  // <Provider store={store}>
+  //   <App/>
+  // </Provider>
   <React.StrictMode>
-    <FormReducer/>
+    {/* <ReduxForm/> */}
+    {/* <FormReducer/> */}
     {/* <NewForm/> */}
     {/* <Timer/> */}
     {/* <Sign/> */}
@@ -55,7 +66,7 @@ root.render(
     {/* <MasterState/> */}
     {/* <Fruit /> */}
     {/* <Counter /> */}
-    {/* <App /> */}
+    <App />
     {/* <First FirstName="ZAKARIA" Lastname="BEN JEDDI" /> */}
     {/* <Form  plc="name required" nameinput="test">Enter Your First Name  </Form> */}
     {/* <Player players = {players} /> */}

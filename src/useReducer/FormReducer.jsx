@@ -1,6 +1,6 @@
 import React , {useRef,useReducer} from 'react'
 import FromReducerFunction, { FORM_REDUCER_VALUES } from './ReducerValues'
-import { type } from '@testing-library/user-event/dist/type'
+// import { type } from '@testing-library/user-event/dist/type'
 
 export default function FormReducer() {
   const [formvaluesReducer ,dispatch] = useReducer(FromReducerFunction,FORM_REDUCER_VALUES)
