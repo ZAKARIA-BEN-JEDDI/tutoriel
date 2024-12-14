@@ -22,7 +22,7 @@ import store from './redux/store';
 // import MasterForm from './Formulaire/MasterFormulaire';
 // import MyMasterFormulaire from './Formulaire/MyMasterFormulaire';
 // import MonsterFormulaire from './Formulaire/MonsterFormulaire';
-import App from './Router/App';
+// import App from './Router/App';
 // import Calculator from './practice/calculator/Calculator';
 // import Todolist from './practice/todolist/todolist';
 // import Usecallback from './usecallbackhook/usecallback'
@@ -33,6 +33,8 @@ import App from './Router/App';
 // import Email from './Email/Email';
 // import Sign from './SignIn/Sign';
 // import Timer from './timer/timer';
+import Layout from './Router/Pages2/Layout';
+import App2 from './Router/App2';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -66,7 +68,8 @@ root.render(
     {/* <MasterState/> */}
     {/* <Fruit /> */}
     {/* <Counter /> */}
-    <App />
+    <App2/>
+    {/* <App /> */}
     {/* <First FirstName="ZAKARIA" Lastname="BEN JEDDI" /> */}
     {/* <Form  plc="name required" nameinput="test">Enter Your First Name  </Form> */}
     {/* <Player players = {players} /> */}
